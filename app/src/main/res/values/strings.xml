@@ -1,10 +1,10 @@
 <resources>
     <string name="app_name">eng-words-reminder-client</string>
-    <!--
-    This string is used for square devices and overridden by hello_world in
-    values-round/strings.xml for round devices.
-    -->
-    <string name="hello_world">From the Square world,\nHello, %1$s!</string>
-    <string name="tile_label">Example tile</string>
-    <string name="complication_label">Example complication</string>
+    <string name="exit">Exit</string>
+    <string name="start">Start</string>
+    <string name="settings">Settings</string>
+    <string name="words_learned">Words learned</string>
+    <string name="yes">Yes</string>
+    <string name="reset_text">You will reset all progress. Are you sure?</string>
+    <string name="reset">Reset</string>
 </resources>

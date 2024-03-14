@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/fragmentMainMenu">
+
+    <fragment
+        android:id="@+id/fragmentMainMenu"
+        android:name="com.example.eng_words_reminder_client.fragments.FragmentMainMenu"
+        android:label="fragment_main_menu"
+        tools:layout="@layout/fragment_main_menu" >
+        <action
+            android:id="@+id/action_fragmentMainMenu_to_fragmentOptions"
+            app:destination="@id/fragmentOptions" />
+        <action
+            android:id="@+id/action_fragmentMainMenu_to_fragmentTenWords"
+            app:destination="@id/fragmentTenWords" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentOptions"
+        android:name="com.example.eng_words_reminder_client.fragments.fragmentOptions.FragmentOptions"
+        android:label="fragment_options"
+        tools:layout="@layout/fragment_options" >
+        <action
+            android:id="@+id/action_fragmentOptions_to_fragmentReset"
+            app:destination="@id/fragmentReset" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentTenWords"
+        android:name="com.example.eng_words_reminder_client.fragments.fragmentTenWords.FragmentTenWords"
+        android:label="fragment_ten_words"
+        tools:layout="@layout/fragment_ten_words" />
+    <fragment
+        android:id="@+id/fragmentReset"
+        android:name="com.example.eng_words_reminder_client.fragments.fragmentOptions.fragmentReset.FragmentReset"
+        android:label="fragment_reset"
+        tools:layout="@layout/fragment_reset" >
+        <action
+            android:id="@+id/action_fragmentReset_to_fragmentMainMenu"
+            app:destination="@id/fragmentMainMenu" />
+    </fragment>
+</navigation>
