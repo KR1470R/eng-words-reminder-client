@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/black"
     android:layout_height="match_parent"
     tools:context=".fragments.fragmentOptions.fragmentReset.FragmentReset">
 
@@ -19,10 +20,10 @@
     <androidx.appcompat.widget.AppCompatTextView
         android:layout_width="80dp"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/pasti_regular"
+        android:fontFamily="@font/rb"
         android:gravity="center"
         android:text="@string/reset_text"
-        android:textColor="@color/salad"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,9 +34,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/margin_small"
-        android:fontFamily="@font/pasti_regular"
+        android:fontFamily="@font/rb"
         android:text="@string/yes"
-        android:textColor="@color/salad"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
