@@ -7,4 +7,5 @@
     <string name="yes">Yes</string>
     <string name="reset_text">You will reset all progress. Are you sure?</string>
     <string name="reset">Reset</string>
+    <string name="s_s">%s/%s</string>
 </resources>

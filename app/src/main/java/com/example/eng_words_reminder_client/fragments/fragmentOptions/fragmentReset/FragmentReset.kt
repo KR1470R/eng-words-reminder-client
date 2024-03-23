@@ -7,13 +7,16 @@ import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.eng_words_reminder_client.R
 import com.example.eng_words_reminder_client.databinding.FragmentResetBinding
+import com.example.eng_words_reminder_client.network.NetworkVM
 import kotlin.math.abs
 
 class FragmentReset : Fragment() {
     private val binding by lazy { FragmentResetBinding.inflate(layoutInflater) }
+    private val viewModel: NetworkVM by activityViewModels()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -53,6 +56,7 @@ class FragmentReset : Fragment() {
                         if (abs(diffX) > abs(diffY)) {
                             if (diffX > 0) {
                                 // swipe right
+                                viewModel.resetStatistic()
                                 findNavController().navigate(FragmentResetDirections.actionFragmentResetToFragmentMainMenu())
                                 sendResetRequest()
                             } else {

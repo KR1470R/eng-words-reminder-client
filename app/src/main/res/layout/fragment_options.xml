@@ -24,23 +24,22 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/rb"
             android:text="@string/words_learned"
-            android:textColor="@color/white"
-            app:layout_constraintBottom_toTopOf="@+id/progressBarWordsLearned"
-            app:layout_constraintEnd_toEndOf="@+id/progressBarWordsLearned"
-            app:layout_constraintStart_toStartOf="@+id/progressBarWordsLearned" />
+            android:textColor="@color/white" />
 
         <ProgressBar
             android:id="@+id/progressBarWordsLearned"
             style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:max="778"
-            android:progress="233"
-            android:progressTint="@color/white"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:max="1000"
+            android:progressTint="@color/white" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvStatistic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rb"
+            android:text="@string/s_s"
+            android:textColor="@color/white" />
     </LinearLayout>
 
     <androidx.appcompat.widget.AppCompatImageView

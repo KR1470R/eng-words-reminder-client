@@ -7,13 +7,16 @@ import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.eng_words_reminder_client.databinding.FragmentTenWordsBinding
 import com.example.eng_words_reminder_client.fragments.FragmentMainMenuDirections
+import com.example.eng_words_reminder_client.network.NetworkVM
 import kotlin.math.abs
 
 class FragmentTenWords : Fragment() {
     private val binding by lazy { FragmentTenWordsBinding.inflate(layoutInflater) }
+    private val viewModel: NetworkVM by activityViewModels()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -25,6 +28,7 @@ class FragmentTenWords : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setSwipeListener()
 
+        viewModel.getTenWords()
     }
 
     private var startX = 0f
