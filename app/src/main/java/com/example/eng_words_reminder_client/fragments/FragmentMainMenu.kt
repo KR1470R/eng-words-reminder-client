@@ -114,7 +114,7 @@ class FragmentMainMenu : Fragment() {
                     if (!isSwipe) {
                         isSwipe = true
                         if (abs(diffX) > abs(diffY)) {
-                            if (diffX > 0) {
+                            if (diffX < 0) {
                                 // swipe right
                                 findNavController()
                                     .navigate(
@@ -125,7 +125,7 @@ class FragmentMainMenu : Fragment() {
                                 // swipe left
                             }
                         } else {
-                            if (diffY > 0) {
+                            if (diffY < 0) {
                                 // swipe down
                                 requireActivity().finish()
                             } else {

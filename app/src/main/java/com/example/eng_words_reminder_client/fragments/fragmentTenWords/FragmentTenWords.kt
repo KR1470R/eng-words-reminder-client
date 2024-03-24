@@ -125,7 +125,7 @@ class FragmentTenWords : Fragment() {
 
     private fun swipeVertical(diffY: Float) {
         lifecycleScope.launch {
-            if (diffY > 0) {
+            if (diffY < 0) {
                 swipeDown()
             } else {
                 swipeUp()
@@ -136,7 +136,7 @@ class FragmentTenWords : Fragment() {
     private fun swipeHorizontal(diffX: Float) {
         lifecycleScope.launch {
             if (swipePossible)
-                if (diffX > 0) {
+                if (diffX < 0) {
                     swipeRight()
                 } else {
                     swipeLeft()

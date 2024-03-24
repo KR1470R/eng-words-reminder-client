@@ -54,7 +54,7 @@ class FragmentReset : Fragment() {
                     if (!isSwipe) {
                         isSwipe = true
                         if (abs(diffX) > abs(diffY)) {
-                            if (diffX > 0) {
+                            if (diffX < 0) {
                                 // swipe right
                                 viewModel.resetStatistic()
                                 findNavController().navigate(FragmentResetDirections.actionFragmentResetToFragmentMainMenu())
@@ -64,7 +64,7 @@ class FragmentReset : Fragment() {
                                 findNavController().popBackStack()
                             }
                         } else {
-                            if (diffY > 0) {
+                            if (diffY < 0) {
                                 // swipe down
                             } else {
                                 // swipe up

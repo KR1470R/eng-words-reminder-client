@@ -71,7 +71,7 @@ class FragmentOptions : Fragment() {
                     if (!isSwipe) {
                         isSwipe = true
                         if (abs(diffX) > abs(diffY)) {
-                            if (diffX > 0) {
+                            if (diffX < 0) {
                                 // swipe right
                                 findNavController()
                                     .navigate(
@@ -83,7 +83,7 @@ class FragmentOptions : Fragment() {
                                 findNavController().popBackStack()
                             }
                         } else {
-                            if (diffY > 0) {
+                            if (diffY < 0) {
                                 // swipe down
                             } else {
                                 // swipe up
