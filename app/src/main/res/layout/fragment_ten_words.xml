@@ -15,8 +15,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:lottie_rawRes="@raw/correct"
-        app:lottie_loop="true" />
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/correct" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/variantOne"
@@ -50,11 +50,11 @@
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/variantThree"
         android:layout_width="@dimen/word_w"
-        android:textAllCaps="true"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/margin_small"
         android:fontFamily="@font/rb"
         android:gravity="center"
+        android:textAllCaps="true"
         android:textColor="@color/white"
         android:textSize="@dimen/text_size_testing"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -73,13 +73,28 @@
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/btnBack"
         android:layout_width="wrap_content"
-        android:alpha="0.10"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/margin_small"
+        android:alpha="0.10"
         android:rotation="270"
         android:src="@drawable/baseline_arrow_back_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvWordsLearned"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:fontFamily="@font/rb"
+        android:gravity="center"
+        android:text="@string/s_s"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_testing"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
