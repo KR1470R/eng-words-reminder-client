@@ -18,14 +18,13 @@
         app:lottie_rawRes="@raw/anim_menu"
         app:lottie_loop="true" />
 
-    <androidx.appcompat.widget.AppCompatTextView
+    <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/btnStart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_small"
-        android:fontFamily="@font/rb"
-        android:text="@string/start"
-        android:textColor="@color/white"
+        android:src="@drawable/ic_play"
+        android:rotation="90"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
