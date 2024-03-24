@@ -11,6 +11,7 @@ import android.widget.ImageView
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import com.airbnb.lottie.LottieAnimationView
 import com.example.eng_words_reminder_client.R
 import com.example.eng_words_reminder_client.databinding.FragmentTenWordsBinding
 import com.example.eng_words_reminder_client.network.NetworkVM
@@ -197,21 +198,21 @@ class FragmentTenWords : Fragment() {
                 word.alpha = (word.alpha.toBigDecimal() - decreaseValue).toFloat()
                 delay(10)
             }
-            showResult(b, binding.ivResult)
+            showResult(b, binding.lottieResult)
             delay(1000)
         }
     }
 
-    private fun showResult(b: Boolean, ivResult: ImageView) {
+    private fun showResult(b: Boolean, lottieResult: LottieAnimationView) {
         if (b) {
-            ivResult.setBackgroundResource(R.drawable.ic_correct)
-        } else ivResult.setBackgroundResource(R.drawable.ic_wrong)
-        ivResult.visibility = View.VISIBLE
+            lottieResult.setAnimation(R.raw.correct)
+        } else lottieResult.setAnimation(R.raw.wrong)
+        lottieResult.visibility = View.VISIBLE
     }
 
     private suspend fun showText() {
         with(binding) {
-            hideResult(binding.ivResult)
+            hideResult(binding.lottieResult)
             val increaseValue = BigDecimal.valueOf(0.02)
             while (variantOne.alpha.toDouble() < 1.0) {
                 variantOne.alpha =

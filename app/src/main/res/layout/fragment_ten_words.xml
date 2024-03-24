@@ -7,15 +7,17 @@
     android:background="@color/black"
     tools:context=".fragments.fragmentTenWords.FragmentTenWords">
 
-    <ImageView
-        android:id="@+id/ivResult"
-        android:layout_width="@dimen/result_size"
-        android:layout_height="@dimen/result_size"
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottieResult"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_rawRes="@raw/correct"
+        app:lottie_loop="true" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/variantOne"
@@ -72,6 +74,7 @@
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/btnBack"
         android:layout_width="wrap_content"
+        android:alpha="0.10"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/margin_small"
         android:rotation="270"
