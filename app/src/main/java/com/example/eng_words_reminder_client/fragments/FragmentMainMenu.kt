@@ -2,7 +2,6 @@ package com.example.eng_words_reminder_client.fragments
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.*
 import android.view.MotionEvent
@@ -13,7 +12,6 @@ import androidx.navigation.fragment.findNavController
 import com.example.eng_words_reminder_client.databinding.FragmentMainMenuBinding
 import com.example.eng_words_reminder_client.network.NetworkVM
 import kotlinx.coroutines.delay
-import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
 import kotlin.math.abs
 
@@ -51,16 +49,17 @@ class FragmentMainMenu : Fragment() {
         getOrLoadId()
     }
 
+    private var isAnimationStarted = false
     private fun startRotationLottieObject() {
         lifecycleScope.launch {
-            val key = (0..10000000).random()
-            while (true) {
-                println(key)
-                binding.lottieMenuHelper.rotation += 90f
-                binding.lottieMenuHelper.playAnimation()
-                delay(4500)
-                binding.lottieMenuHelper.cancelAnimation()
-            }
+            if (!isAnimationStarted)
+                while (true) {
+                    isAnimationStarted = true
+                    binding.lottieMenuHelper.rotation += 90f
+                    binding.lottieMenuHelper.playAnimation()
+                    delay(4500)
+                    binding.lottieMenuHelper.cancelAnimation()
+                }
         }
     }
 
