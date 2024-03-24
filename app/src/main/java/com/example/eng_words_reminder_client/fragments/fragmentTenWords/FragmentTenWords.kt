@@ -56,7 +56,7 @@ class FragmentTenWords : Fragment() {
                     variantOne.text = listVariants[0]
                     variantTwo.text = listVariants[1]
                     variantThree.text = listVariants[2]
-                }
+                } else getTenWords()
                 showText()
             }
         }
@@ -182,6 +182,7 @@ class FragmentTenWords : Fragment() {
 
     private suspend fun fadeText(b: Boolean) {
         with(binding) {
+            root.isEnabled = false
             val decreaseValue = BigDecimal.valueOf(0.02)
             while (variantOne.alpha.toDouble() > 0.0) {
                 variantOne.alpha =
@@ -208,6 +209,7 @@ class FragmentTenWords : Fragment() {
     private suspend fun showText() {
         with(binding) {
             hideResult(binding.ivResult)
+            binding.root.isEnabled = true
             val increaseValue = BigDecimal.valueOf(0.02)
             while (variantOne.alpha.toDouble() < 1.0) {
                 variantOne.alpha =
