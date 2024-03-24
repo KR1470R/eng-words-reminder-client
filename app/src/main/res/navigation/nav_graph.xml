@@ -9,35 +9,59 @@
         android:id="@+id/fragmentMainMenu"
         android:name="com.example.eng_words_reminder_client.fragments.FragmentMainMenu"
         android:label="fragment_main_menu"
-        tools:layout="@layout/fragment_main_menu" >
+        tools:layout="@layout/fragment_main_menu">
         <action
             android:id="@+id/action_fragmentMainMenu_to_fragmentOptions"
-            app:destination="@id/fragmentOptions" />
+            app:destination="@id/fragmentOptions"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
         <action
             android:id="@+id/action_fragmentMainMenu_to_fragmentTenWords"
-            app:destination="@id/fragmentTenWords" />
+            app:destination="@id/fragmentTenWords"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
     </fragment>
     <fragment
         android:id="@+id/fragmentOptions"
         android:name="com.example.eng_words_reminder_client.fragments.fragmentOptions.FragmentOptions"
         android:label="fragment_options"
-        tools:layout="@layout/fragment_options" >
+        tools:layout="@layout/fragment_options">
         <action
             android:id="@+id/action_fragmentOptions_to_fragmentReset"
-            app:destination="@id/fragmentReset" />
+            app:destination="@id/fragmentReset"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
     </fragment>
     <fragment
         android:id="@+id/fragmentTenWords"
         android:name="com.example.eng_words_reminder_client.fragments.fragmentTenWords.FragmentTenWords"
         android:label="fragment_ten_words"
-        tools:layout="@layout/fragment_ten_words" />
+        tools:layout="@layout/fragment_ten_words">
+        <action
+            android:id="@+id/action_fragmentTenWords_to_fragmentMainMenu"
+            app:destination="@id/fragmentMainMenu"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
+    </fragment>
     <fragment
         android:id="@+id/fragmentReset"
         android:name="com.example.eng_words_reminder_client.fragments.fragmentOptions.fragmentReset.FragmentReset"
         android:label="fragment_reset"
-        tools:layout="@layout/fragment_reset" >
+        tools:layout="@layout/fragment_reset">
         <action
             android:id="@+id/action_fragmentReset_to_fragmentMainMenu"
-            app:destination="@id/fragmentMainMenu" />
+            app:destination="@id/fragmentMainMenu"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
     </fragment>
 </navigation>
