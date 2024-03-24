@@ -6,4 +6,5 @@
     <dimen name="words_h">18dp</dimen>
     <dimen name="text_size_testing">10sp</dimen>
     <dimen name="result_size">100dp</dimen>
+    <dimen name="size_lottie_menu">100dp</dimen>
 </resources>

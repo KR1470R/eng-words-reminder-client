@@ -7,6 +7,18 @@
     android:layout_height="match_parent"
     tools:context=".fragments.FragmentMainMenu">
 
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottieMenuHelper"
+        android:layout_width="@dimen/size_lottie_menu"
+        android:layout_height="@dimen/size_lottie_menu"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_rawRes="@raw/anim_menu"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true" />
+
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/btnStart"
         android:layout_width="wrap_content"
