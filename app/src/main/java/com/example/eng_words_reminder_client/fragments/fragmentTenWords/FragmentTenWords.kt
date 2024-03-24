@@ -25,6 +25,7 @@ class FragmentTenWords : Fragment() {
     private val viewModel: NetworkVM by activityViewModels()
     private val listOfCurrentWords = mutableListOf<ResponseGetTenWords>()
     private lateinit var currentWord: ResponseGetTenWords
+    private var swipePossible = true
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -133,23 +134,25 @@ class FragmentTenWords : Fragment() {
 
     private fun swipeHorizontal(diffX: Float) {
         lifecycleScope.launch {
-            if (diffX > 0) {
-                swipeRight()
-            } else {
-                swipeLeft()
-            }
+            if (swipePossible)
+                if (diffX > 0) {
+                    swipeRight()
+                } else {
+                    swipeLeft()
+                }
         }
     }
 
     private suspend fun swipeUp() {
-        if (currentWord.meanings.contains(binding.variantTwo.text)) {
-            listOfCurrentWords.remove(currentWord)
-            fadeText(true)
-            showWord()
-        } else {
-            fadeText(false)
-            showWord()
-        }
+        if (swipePossible)
+            if (currentWord.meanings.contains(binding.variantTwo.text)) {
+                listOfCurrentWords.remove(currentWord)
+                fadeText(true)
+                showWord()
+            } else {
+                fadeText(false)
+                showWord()
+            }
     }
 
     private fun swipeDown() {
@@ -182,7 +185,7 @@ class FragmentTenWords : Fragment() {
 
     private suspend fun fadeText(b: Boolean) {
         with(binding) {
-            root.isEnabled = false
+            swipePossible = false
             val decreaseValue = BigDecimal.valueOf(0.02)
             while (variantOne.alpha.toDouble() > 0.0) {
                 variantOne.alpha =
@@ -209,7 +212,6 @@ class FragmentTenWords : Fragment() {
     private suspend fun showText() {
         with(binding) {
             hideResult(binding.ivResult)
-            binding.root.isEnabled = true
             val increaseValue = BigDecimal.valueOf(0.02)
             while (variantOne.alpha.toDouble() < 1.0) {
                 variantOne.alpha =
@@ -222,6 +224,7 @@ class FragmentTenWords : Fragment() {
                     (word.alpha.toBigDecimal() + increaseValue).toFloat()
                 delay(10)
             }
+            swipePossible = true
         }
     }
 
