@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/dark_abstract_background"
+    android:background="@color/black"
     tools:context=".fragments.fragmentTenWords.FragmentTenWords">
 
     <ImageView
@@ -35,12 +35,13 @@
         android:id="@+id/variantTwo"
         android:layout_width="@dimen/word_w"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_small"
+        android:layout_marginTop="@dimen/margin_normal"
         android:fontFamily="@font/rb"
         android:gravity="center"
         android:textAllCaps="true"
         android:textColor="@color/white"
         android:textSize="@dimen/text_size_testing"
+        app:layout_constraintBottom_toTopOf="@+id/variantThree"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -73,6 +74,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/margin_small"
+        android:rotation="270"
         android:src="@drawable/baseline_arrow_back_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
