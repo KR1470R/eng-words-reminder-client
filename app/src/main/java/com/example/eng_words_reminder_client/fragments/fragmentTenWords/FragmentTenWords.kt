@@ -160,7 +160,7 @@ class FragmentTenWords : Fragment() {
         lifecycleScope.launch {
             if (currentWord.meanings.contains(binding.variantOne.text)) {
                 listOfCurrentWords.remove(currentWord)
-                fadeText(false)
+                fadeText(true)
                 showWord()
             } else {
                 fadeText(false)
@@ -172,7 +172,7 @@ class FragmentTenWords : Fragment() {
     private suspend fun swipeRight() {
         if (currentWord.meanings.contains(binding.variantThree.text)) {
             listOfCurrentWords.remove(currentWord)
-            fadeText(false)
+            fadeText(true)
             showWord()
         } else {
             fadeText(false)
