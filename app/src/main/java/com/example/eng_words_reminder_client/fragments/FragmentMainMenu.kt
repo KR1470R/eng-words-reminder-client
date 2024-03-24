@@ -8,9 +8,13 @@ import android.view.*
 import android.view.MotionEvent
 import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.example.eng_words_reminder_client.databinding.FragmentMainMenuBinding
 import com.example.eng_words_reminder_client.network.NetworkVM
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.isActive
+import kotlinx.coroutines.launch
 import kotlin.math.abs
 
 class FragmentMainMenu : Fragment() {
@@ -41,9 +45,21 @@ class FragmentMainMenu : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        startRotationLottieObject()
         setObserver()
         setSwipeListener()
         getOrLoadId()
+    }
+
+    private fun startRotationLottieObject() {
+        lifecycleScope.launch {
+            while (isActive) {
+                binding.lottieMenuHelper.rotation += 90f
+                binding.lottieMenuHelper.playAnimation()
+                delay(1500)
+                binding.lottieMenuHelper.cancelAnimation()
+            }
+        }
     }
 
     private fun setObserver() {
