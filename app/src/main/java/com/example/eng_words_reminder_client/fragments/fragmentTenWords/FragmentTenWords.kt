@@ -206,7 +206,11 @@ class FragmentTenWords : Fragment() {
     private fun showResult(b: Boolean, lottieResult: LottieAnimationView) {
         if (b) {
             lottieResult.setAnimation(R.raw.correct)
-        } else lottieResult.setAnimation(R.raw.wrong)
+            lottieResult.playAnimation()
+        } else {
+            lottieResult.setAnimation(R.raw.wrong)
+            lottieResult.playAnimation()
+        }
         lottieResult.visibility = View.VISIBLE
     }
 
