@@ -53,7 +53,9 @@ class FragmentMainMenu : Fragment() {
 
     private fun startRotationLottieObject() {
         lifecycleScope.launch {
-            while (isActive) {
+            val key = (0..10000000).random()
+            while (true) {
+                println(key)
                 binding.lottieMenuHelper.rotation += 90f
                 binding.lottieMenuHelper.playAnimation()
                 delay(4500)
