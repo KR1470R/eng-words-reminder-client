@@ -56,7 +56,7 @@ class FragmentMainMenu : Fragment() {
             while (isActive) {
                 binding.lottieMenuHelper.rotation += 90f
                 binding.lottieMenuHelper.playAnimation()
-                delay(1500)
+                delay(4500)
                 binding.lottieMenuHelper.cancelAnimation()
             }
         }
