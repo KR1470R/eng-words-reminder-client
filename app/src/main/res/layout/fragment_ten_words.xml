@@ -24,6 +24,7 @@
         android:layout_marginStart="@dimen/margin_small"
         android:fontFamily="@font/rb"
         android:gravity="center"
+        android:textAllCaps="true"
         android:textColor="@color/white"
         android:textSize="@dimen/text_size_testing"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -37,6 +38,7 @@
         android:layout_marginTop="@dimen/margin_small"
         android:fontFamily="@font/rb"
         android:gravity="center"
+        android:textAllCaps="true"
         android:textColor="@color/white"
         android:textSize="@dimen/text_size_testing"
         app:layout_constraintEnd_toEndOf="parent"
@@ -46,6 +48,7 @@
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/variantThree"
         android:layout_width="@dimen/word_w"
+        android:textAllCaps="true"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/margin_small"
         android:fontFamily="@font/rb"
