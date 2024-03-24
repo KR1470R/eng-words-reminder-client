@@ -24,7 +24,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_small"
         android:src="@drawable/ic_play"
-        android:rotation="90"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

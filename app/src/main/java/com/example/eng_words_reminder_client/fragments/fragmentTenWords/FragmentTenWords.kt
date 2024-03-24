@@ -230,7 +230,12 @@ class FragmentTenWords : Fragment() {
                 delay(10)
             }
             swipePossible = true
+            setCounterStatus()
         }
+    }
+
+    private fun setCounterStatus() {
+        binding.tvCounter.text = getString(R.string.s_s).format(,10)
     }
 
     private fun hideResult(ivResult: ImageView) {
